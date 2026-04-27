@@ -81,10 +81,8 @@ class Ticket(models.Model):
     seat = models.IntegerField()
 
     def __str__(self) -> str:
-        return "Matrix 2019-08-19 20:30:00 (row: 7, seat: 10)"
-        # return (f"{self.movie_session.movie.title} {self.order.created_at}"
-        #         f" (row: {self.row}, seat: {self.seat})")
-        # I did that because there is problem with this test
+        return (f"{self.movie_session}"
+                f" (row: {self.row}, seat: {self.seat})")
 
     class Meta:
         constraints = [
